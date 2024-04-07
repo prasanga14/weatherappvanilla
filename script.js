@@ -1,3 +1,5 @@
+// website completely load bhaye pachi js run huncha ani async lai global scope ma lekhna ni mildaina so kunai function bhitra rakhna lai esari banako ho
+
 document.addEventListener('DOMContentLoaded', async function () {
   const cityInput = document.getElementById('cityInput');
   const getWeatherBtn = document.getElementById('getWeatherBtn');
@@ -26,6 +28,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         const temperature = Math.round(data.main.temp);
         const humidity = data.main.humidity;
         const windSpeed = data.wind.speed;
+
+        // hami le dynamixally api ko data lai html elements banayera dom ma inject gareko ho
 
         const weather = `
           <h3>${data.name}</h3>
